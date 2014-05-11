@@ -8,6 +8,7 @@
       <th>Updated</th>
       <th>Subject</th>
       <th>Body</th>
+      <th>Responsible</th>
       <th>Flags</th>
       <th colspan="3"></th>
     </tr>
@@ -21,6 +22,7 @@
         <td><%= ticket.updated_at.to_date %></td>
         <td><%= ticket.small_title %></td>
         <td><%= ticket.body_preview %></td>
+        <td><%= if ticket.user then ticket.user.name end%></td>
         <td><% ticket.flags.each do |flag| %>
            <%= flag.title %>
         <% end %></td>
