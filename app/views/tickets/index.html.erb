@@ -5,6 +5,7 @@
     <tr>
       <th>Ticket</th>
       <th>Recv'd</th>
+      <th>Updated</th>
       <th>Subject</th>
       <th>Body</th>
       <th>Flags</th>
@@ -17,6 +18,7 @@
       <tr>
         <td><%= link_to ticket.id, ticket %></td>
         <td><%= ticket.created_at.to_date %></td>
+        <td><%= ticket.updated_at.to_date %></td>
         <td><%= ticket.small_title %></td>
         <td><%= ticket.body_preview %></td>
         <td><% ticket.flags.each do |flag| %>

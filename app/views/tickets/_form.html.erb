@@ -1,4 +1,4 @@
-<%= simple_form_for(@ticket) do |f| %>
+<%= simple_form_for @ticket do |f| %>
   <% if @ticket.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
@@ -10,16 +10,8 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.input :title %><br>
-  </div>
-  <div class="field">
-    <%= f.input :body %><br>
-  </div>
-  <div class="field">
-    <%= f.association :flags, as: :radio_buttons %><br>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.input :title %><br>
+  <%= f.input :body %><br>
+  <%= f.association :flags, as: :check_boxes %> 
+  <%= f.submit %>
 <% end %>
