@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140511023509) do
+ActiveRecord::Schema.define(version: 20140511032710) do
 
   create_table "flags", force: true do |t|
     t.string   "title"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140511023509) do
   end
 
   create_table "flags_tickets", force: true do |t|
+    t.integer "flag_id"
+    t.integer "ticket_id"
   end
 
   create_table "tickets", force: true do |t|
