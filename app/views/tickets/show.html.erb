@@ -10,8 +10,9 @@
   <%= @ticket.body %>
 </p>
 
+
+<strong>Flags:</strong>
 <p><% @ticket.flags.each do |flag| %>
-  <strong>Flags:</strong>
    <%= flag.title %>
 <% end %></p>
 
