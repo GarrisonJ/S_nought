@@ -11,36 +11,38 @@
     <%= csrf_meta_tags %>
   </head>
 
-<nav class="top-bar" data-topbar="">
-  <!-- Title -->
-  <ul class="title-area">
-    <li class="name"><h1><a href="#"><h1><%= link_to 'S₀', root_url %></h1></li>
-
-    <!-- Mobile Menu Toggle -->
-    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-  </ul>
-
-  <!-- Top Bar Section -->
+  <nav class="top-bar" data-topbar="">
+    <!-- Title -->
+    <ul class="title-area">
+      <li class="name"><h1><a href="#"><h1><%= link_to 'S₀', root_url %></h1></li>
   
-  <section class="top-bar-section">
-
-    <!-- Top Bar Left Nav Elements -->
-    <ul class="left">
-
-      <!-- Search | has-form wrapper -->
-      <li class="has-form">
-        <div class="row collapse">
-          <div class="large-8 small-9 columns">
-            <input type="text" placeholder="Ticket #">
-          </div>
-          <div class="large-4 small-3 columns">
-            <a href="#" class="alert button expand">Go</a>
-          </div>
-        </div>
-      </li>
+      <!-- Mobile Menu Toggle -->
+      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
-  </section>
-</nav>
+  
+    <!-- Top Bar Section -->
+    
+    <section class="top-bar-section">
+  
+      <!-- Top Bar Left Nav Elements -->
+      <ul class="left">
+  
+        <!-- Search | has-form wrapper -->
+        <li class="has-form">
+          <div class="row collapse">
+	    <%= form_tag(tickets_path, :method => "get", id: "search-form") do %>
+              <div class="large-8 small-9 columns">
+  	        <%= text_field_tag :search, params[:search], placeholder: "Ticket #" %>
+              </div>
+              <div class="large-4 small-3 columns">
+    	        <%= submit_tag "Search", :name => nil, class:"alert button expand" %>
+              </div>
+	    <% end %>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </nav>
 
   <body class="row">
     <%= yield %>

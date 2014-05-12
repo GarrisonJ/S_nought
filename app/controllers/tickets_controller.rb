@@ -4,7 +4,11 @@ class TicketsController < ApplicationController
   # GET /tickets
   # GET /tickets.json
   def index
-    @tickets = Ticket.all
+    if params[:search]
+      @tickets = Ticket.where(:id => params[:search])
+    else
+      @tickets = Ticket.all
+    end
   end
 
   # GET /tickets/1
