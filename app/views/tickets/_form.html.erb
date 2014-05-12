@@ -13,6 +13,6 @@
   <%= f.input :title %><br>
   <%= f.input :body %><br>
   <%= f.association :flags, as: :check_boxes %> 
-  <%= f.association :user %> 
+  <%= f.association :user, label: "Responsible" %> 
   <%= f.submit %>
 <% end %>
