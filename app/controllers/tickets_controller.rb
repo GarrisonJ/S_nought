@@ -6,6 +6,8 @@ class TicketsController < ApplicationController
   def index
     if params[:search]
       @tickets = Ticket.where(:id => params[:search])
+    elsif params[:flags]  
+      @tickets = Flag.where(:id => params[:flags]).first.tickets
     else
       @tickets = Ticket.all
     end

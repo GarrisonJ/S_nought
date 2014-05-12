@@ -25,8 +25,7 @@
     <section class="top-bar-section">
   
       <!-- Top Bar Left Nav Elements -->
-      <ul class="left">
-  
+      <ul class="left">  
         <!-- Search | has-form wrapper -->
         <li class="has-form">
           <div class="row collapse">
@@ -43,6 +42,16 @@
 	<li>
 	  <%= link_to 'Proxy', new_ticket_path %>
 	</li>
+      </ul>
+      <ul class="right">  
+        <li class="has-dropdown">
+          <a href="#">Flags</a>
+          <ul class="dropdown">
+	    <% Flag.all.each do |f| %>
+    	       <li><%= link_to f.title, root_url(:flags => f.id), :method => :get %></li>
+	    <% end %>
+          </ul>
+        </li>
       </ul>
     </section>
   </nav>
