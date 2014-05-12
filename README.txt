@@ -1,5 +1,4 @@
-== README
-
+Ticket system for user support. 
 
 
  Customer                 Employees                           
